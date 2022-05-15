@@ -1,0 +1,68 @@
+draf
+
+abstarct
+
+Introduction
+
+graph
+	sequencing graph. 
+
+resources 
+
+constraint
+	
+		implementation constraints reflect the desire of the designer to achieve a structure with some properties. Examples are 	area constraints and performance constraints, e.g., cycle-time andlor latency bounds. A different kind of implementation constraint is a resource b~nding constraint. In this case, a particular operation is required to be implemented by a given resource. 
+These constraints are motivated by the designer's previous knowledge, or intuition, that one particular choice is the best and that other choices do not need investigation. Architectural synthesis with resource binding constraints is often referred to as synthesis from partial structure
+
+
+problem
+	
+	The Temporal Domain: Scheduling
+	The Spatial Domain: Binding 
+	Hierarchical Models 
+
+Approach
+
+
+Resource dominated circuit
+
+	non hierarchical sequence graph
+		compatibility graph
+			equation
+			model
+		conflict graph
+			complement of compatibility graph
+			model(vertex color)
+			clique
+		conflict graph as an interval
+			execution interval
+			intersection between two interval
+			minimum vertex coloring in polynomial time
+		
+	resource sharing and binding in sequence graph
+		model call
+			single call
+			multiple call
+		iteration
+			unroll
+			similar to model call
+		branching
+		
+		
+		
+General circuit
+
+	register sharing
+		lifetime variable
+		variable alive in non overlaping intervals or under alternative condition are compatible
+		compatibility graph
+		conflict graph
+		non-hierarchical
+		hierarchical
+	multiple memory binding
+	
+	bus sharing and bnding
+	
+	multiplexer
+	
+	

@@ -1,0 +1,46 @@
+\section{Basic Concept}
+
+
+\subsection{Clique Covering and Clique Panitioning}
+
+Clique partitioning and clique covering are closely related. A clique partition is a disjoint clique cover. A clique cover that is not disjoint can be made disjoint by selecting a set of disjoint cliques each contained in a corresponding clique of the cover. Finding a clique cover, or partition, with bounded cardinality is an intractable problem [??]. 
+A partition into cliques can be obtained by coloring the complement of the graph. Indeed each clique identifies a set of pairwise adjacent vertices, which are not adjacent in the graph complement, and thus can be colored with the same color. Therefore the clique cover number of a graph corresponds to the chromatic number of its complement. As a result, heuristic and exact algorithms for coloring can be applied to the search of minimum-cardinality clique partitions. 
+
+\subsection{Data Flow Sequencing Graph}
+
+evel are in terms of tasks (or operations) and their dependencies. Tasks may be No Operations (NOPs), i.e., fake operations that execute instantaneously with no side effect. Dependencies arise from several reasons. A first reason is availability of data. When an input to an operation is the result of another operation, the former operation depends on the latter. A second reason is serialization constraints in the specification. A task may have to follow a second one regardless of data dependency. A simple example is provided by the two following operations: loading data on a bus and raising a flag. The circuit model may require that the flag is raised after the data are loaded. Last, dependencies may arise because two tasks share the same resource that can service one task at a time. Thus one task has to perform before the other. Note, though, that, in general, dependencies due to resource sharing are not part of the original circuit specification, because the way in which resources are exploited is related to the circuit implementation. 
+
+Data-flow graphs represent operations and data dependencies. Let the number of operations be n,,. A data-flow graph $ G_{d}(V, E) $ is a directed graph whose vertex set $ V = \{v_{i}; i = 1,2,...,n_{ops}) $ is in one-to-one correspondence with the set of tasks. We assume here that operations require one or more operands and yield one or more results (e.g., an addition with two addends yielding a result and an overflow flag). The directed edge set $ E= \{(v_{i},v_{j}); i,j = 1,2,...,n_{ops}) $  is in correspondence with the transfer of data from an operation to another one. Data-flow graphs can be extended by adding other types of depend
+
+\subsection{Resources Type}
+
+Resources implement different types of functions in hardware. They can be broadly classified as follows: 
+
+\begin{itemize}
+\item Functional resources process data. They implement arithmetic or logic functions and can be grouped into two subclasses: 
+
+\begin{itemize}
+\item  Primitive resources are subcircuits that are designed carefully once and often used. Examples are arithmetic units and some standard logic functions, such as encoders and decoders. Primitive resources can be stored in libraries. Each resource is fully characterized by its area and performance parameters. 
+\item  Application-specific resources are subcircuits that solve a particular subtask. 
+\end{itemize}
+
+\item An example is a subcircuit servicing a particular intempt of a processor. In general such resources are the implementation of other HDL models. When synthesizing hierarchical sequencing graph models bottom up, the implementation of the entities at lower levels of the hierarchy can be viewed as resources. 
+
+
+\item Memory resources store data. Examples are registers and read-only and read-write memory arrays. Requirement for storage resources are implicit in the sequencing graph model. In some cases, access to memory arrays is modeled as transfer of data across circuit ports. 
+
+
+\item Interface resources support data transfer. Interface resources include busses that may he used as a major means of communication inside a data path. External interface resources are UO pads and interfacing circuits. 
+
+\end{itemize}
+
+\subsection{Constraint Definition}
+
+Constraints in architectural synthesis can be classified into two major groups: interface constraints and implementatron constraints. 
+Interface constraints are additional specifications to ensure that the circuit can be embedded in a given environment. They relate to the format and timing of the I/O data transfers. The data format is often specified by the interface of the model. The timing separation of UO operations can be specified by timing constraints that can ensure that a synchronous I/O operation follows/precedes another one by a prescribed number of cycles in a given interval. Timing constraints can also specify data rates for pipelined systems. Implementation constraints reflect the desire of the designer to achieve a structure with some properties. Examples are area constraints and performance constraints, e.g., cycle-time and/or latency bounds. 
+A different kind of implementation constraint is a resource b~nding constraint. In this case, a particular operation is required to be implemented by a given resource. These constraints are motivated by the designer's previous knowledge, or intuition, that one particular choice is the best and that other choices do not need investigation. Architectural synthesis with resource binding constraints is often referred to as synthesis from partial structure [??]. Design systems that support such a feature allow a designer to specify a circuit in a wide spectrum of ways, ranging from a full behavioral model to a structural one. This modeling capability may be useful to leverage previously designed components. 
+
+
+
+
+
