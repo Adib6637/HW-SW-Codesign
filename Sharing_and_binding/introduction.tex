@@ -1,17 +1,14 @@
 \section{Introduction}
 
-\subsection{Resource sharing}
-Resource sharing is the assignment of a resource to more than one operation. The 
-primary goal of resource sharing is to reduce the area of a circuit, by allowing multiple 
-non-concurrent operations to share the same hardware operator. Resource sharing is 
-often mandatory to meet specified upper bounds on the circuit area (or resource usage)\cite{b1}.
+% motivation
+% intro to digital circuit synthesis
+% intro HLS
+% the need of sharing and binding
+% general circuit
+% output
+% analysis of output : are, latency, cycle time -> optimize
+% paper flow
 
-\subsection{Resource binding}
-Resource binding is the explicit definition of a mapping between the operations 
-and the resources. A binding may imply that some resources are shared. Resource 
-binding (or partial binding) may be part of the original circuit specifications, and 
-thus some sharing may be defined explicitly in the hardware model. Resource usage 
-constraints may infer implicitly some resource sharing, even though they do not imply 
-a particular binding\cite{b1}. 
+Today, digital circuit are everywhere, from daily fashion accessories to heavy industry, and their demand keep increasing every single day. These phenomena cause evolution in digital circuit production industry. With the help of Computer Aided Design (CAD), a designer could produce much better circuit at larger scale. The production of circuit involving specification, synthesizing and implementation. In specification stage, the aim of designer is to fulfil all the  functionality of the circuit where architectural view of the circuit is produced. The process from architectural model to register transfer level implementation comprise architectural synthesis or known as high level synthesis. A produced circuit is evaluated based on their area and performance. These aspects can only be optimized during high level synthesis where many aspect and algorithm are considered and imply. This is where resource sharing and binding entailed in high level synthesis to help further circuit optimization.
 
-
+In this paper, resource sharing and binding that are focused for general circuit will be discussed. At the beginning, a sample model of the circuit will be introduced to ease the upcoming explanations in \textit{Sample Model} section. Then, the important aspect of the circuit specification will be discussed as a guide in \textit{Specification} section. Following that, sharing and binding will be introduced, including the methods for sharing and binding in \textit{Resource Sharing and Binding Methods} section. Eventually, we will go into circuit optimization, where estimation of the circuit's aspects and how to achieve the optimization through sharing and binding will be discussed in \textit{Optimization} section.

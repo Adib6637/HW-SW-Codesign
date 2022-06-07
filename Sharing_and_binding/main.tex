@@ -5,20 +5,28 @@
 \usepackage{amsmath,amssymb,amsfonts,dsfont}
 \usepackage{algorithmic}
 \usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{listings}
 \usepackage{textcomp}
 \usepackage{xcolor}
 \usepackage{xr}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\usepackage{stackengine}
+\newcommand\citeequation[2]{%
+  \stackengine{0pt}{$\displaystyle#1$}{\makebox[\linewidth]{\hfill \cite{#2}\kern20pt}}
+    {O}{c}{F}{T}{L}
+}
 \begin{document}
 
 \title{Sharing and Binding for General Circuits\\
 {\footnotesize }
-\thanks{Identify applicable funding agency here. If none, delete this.}
+\thanks{University of Applied Sciences Hamm-Lippstadt.}
 }
 
-\author{\IEEEauthorblockN{1\textsuperscript{st} Sheikh Muhammad Adib Bin Sh Abu Bakar}
-\IEEEauthorblockA{\textit{Hochshule Hamm-Lippstadt} \\
+\author{\IEEEauthorblockN{ Sheikh Muhammad Adib Bin Sh Abu Bakar}
+\IEEEauthorblockA{\textit{University of Applied Sciences Hamm-Lippstadt} \\
 \textit{B.Eng. Electronic Engineering}\\
 Lippstadt, Germany \\
 sheikh-muhammad-adib.bin-sh-abu-bakar@stud.hshl.de}
@@ -28,46 +36,60 @@ sheikh-muhammad-adib.bin-sh-abu-bakar@stud.hshl.de}
 \maketitle
 
 \input{abstract.tex}
-\begin{IEEEkeywords}
-sharing, binding, general circuit, optimization
-\end{IEEEkeywords}
 
+\input{Introduction.tex} 
+% motivation
+% intro to digital circuit synthesis
+% intro HLS
+% the need of sharing and binding
+% general circuit
+% output
+% analysis of output : are, latency, cycle time -> optimize
+% paper flow
 
-\input{Introduction.tex}
-\input{BasicConcept.tex}
-\input{Problem.tex}
-\input{resource_sharing.tex}
-\input{register_sharing.tex}
+\input{Model.tex}
+% sample model: integration equation
 
+\input{Specification.tex} 
+% circuit specification
+% resource 
+% constarint
+% sample model : sequence graph
+% scheduled equence graph
 
-
-
-
-%abstract
-%
-%Introduction
-%	Sharing and binding
-%
-%Basic concept
-%	graph
-%	resources 
-%	constraint
-%
-%problem+approach
-%
-%Resource dominated circuit
-%
-%General circuit
+\input{ArchitecturalSynthesis.tex}
+% stages : placing and interconnection
+% focus more on interconnection 
 
 
 
-\section{Conclusion}
+\input{SharingAndBinding.tex}
+% sharing def
+% binding def
+% problem - The Spatial Domain: Binding 
+% sharing and binding method 
+% Non-Hierarchical Sequencing Graphs 
+% Hierarchical Sequencing Graphs 
+% Register Sharing 
+% Multi-Port Memory Binding 
+% Bus Sharing and Binding 
+% UnconsIrGned Minimum-Area Binding* 
+% Performance-ConsIrained and Performance-Directed Binding*
+
+
+\input{Optimization.tex}
+% area and performance estimation
+% design space
+% optimization : 3 trade-off
+
+\input{Conclusion.tex}
+
 
 \section*{Acknowledgment}
 I would like to express my very great appreciation to Dr Achim Rettberg for his valuable and constructive suggestions during the planning and development of this research work. His willingness to give his time so generously has been very much appreciated.
 
 \begin{thebibliography}{00}
-\bibitem{b1} G. D. Micheli, Synthesis and optimization of digital circuits. New York: McGraw-Hill, 1994.
+\bibitem{main} G. D. Micheli, Synthesis and optimization of digital circuits. New York: McGraw-Hill, 1994.
 \bibitem{b2} Shilpa, K. and Lakshminarayana, C and Singh, Manoj. (2019). Optimal Resource Allocation and Binding in High-Level Synthesis Using Nature-Inspired Computation. 10.1007/978-981-13-5802-9-95.  
 \end{thebibliography}
 
